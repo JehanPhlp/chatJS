@@ -24,4 +24,16 @@
         }
     }
 
+    function get10Messages(){
+        try {
+            $linkpdo = createDB();
+            $select = $linkpdo->prepare('SELECT contenu, auteur, date_heure FROM Message ORDER BY 3 desc LIMIT 10');
+            $select->execute();
+            $list = $select->fetchAll();
+            return $list;
+        } catch(Exception $e) {
+            die('Erreur:'.$e->getMessage());
+        }
+    }
+
 ?>
