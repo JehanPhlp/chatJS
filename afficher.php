@@ -10,7 +10,7 @@
     <body>
         <?php
 
-            require('bd.php');
+            require('query.php');
 
             $listmessages = getMessages();
 

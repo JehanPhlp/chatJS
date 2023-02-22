@@ -1,6 +1,6 @@
 <?php
 
-    require('bd.php');
+    require('query.php');
 
     $derniersMessages = get10Messages();
 

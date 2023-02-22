@@ -1,6 +1,6 @@
 <?php
 
-    require("bd.php");
+    require("query.php");
 
     $auteur = $_GET['auteur'];
     $contenu = $_GET['contenu'];
@@ -9,5 +9,5 @@
     createMessage($contenu, $auteur, $dateheure);
 
     header('Location: afficher.php');
-    
+
 ?>
