@@ -1,16 +1,28 @@
-<?php
 
-    require('bd.php');
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Titre de la page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <?php
 
-    $listmessages = getMessages();
+            require('bd.php');
 
-    echo '<table>';
-    foreach($listmessages as $message){
-        echo '<tr>
-                <td>'.$message[0]['auteur'].'</td>
-                <td>'.$message[0]['contenu'].'</td>
-            </tr>';
-    }
-    echo '</table>';
+            $listmessages = getMessages();
 
-?>
+            echo '<table>';
+            foreach($listmessages as $message){
+                echo '<tr>
+                        <td>'.$message[0]['auteur'].'</td>
+                        <td>'.$message[0]['contenu'].'</td>
+                    </tr>';
+            }
+            echo '</table>';
+
+        ?>
+    </body>
+</html>
