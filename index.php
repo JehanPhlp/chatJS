@@ -14,7 +14,7 @@
         <input type="text" id="champPseudo">
         <?php
 
-            require('bd.php');
+            require('query.php');
 
             $listmessages = getMessages();
 
