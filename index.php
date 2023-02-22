@@ -7,10 +7,11 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js">
             function getChampMessage() {
-                
+                return document.getElementById("champsMessage").value;
             }
-            let champMessage = document.getElementById("champsMessage");
-            let auteur = document.getElementById("champPseudo");
+            function getAuteur() {
+                return document.getElementById("champPseudo").value;
+            }
         </script>
     </head>
     <body>
@@ -32,7 +33,7 @@
         ?>
         <form action="">
             <input type="text" id="champMessage">
-            <input type="submit" value="Envoyer" onclick="envoyerMessage(champMessage, auteur)">
+            <input type="submit" value="Envoyer" onclick="envoyerMessage(getChampMessage(), getAuteur())">
         </form>
     </body>
 </html>
