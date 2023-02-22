@@ -22,6 +22,7 @@ function getXhr() {
  * Méthode qui sera appelée sur le click du bouton envoyer
  */
 function envoyerMessage(message, evoyeur) {
+  console.log("je passe dans ovoyer message");
   var xhr = getXhr();
   // On défini ce qu'on va faire quand on aura la réponse
   xhr.onreadystatechange = function () {

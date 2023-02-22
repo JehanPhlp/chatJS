@@ -6,6 +6,9 @@
         <title>Chat Papeete</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js">
+            function getChampMessage() {
+                
+            }
             let champMessage = document.getElementById("champsMessage");
             let auteur = document.getElementById("champPseudo");
         </script>
