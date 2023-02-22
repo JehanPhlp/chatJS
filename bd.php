@@ -1,10 +1,10 @@
 <?php 
 
 	function createDB(){
-        $server = '127.0.0.1';
-        $db = 'id20338602_bd_chat';
-        $login = 'id20338602_admin';
-        $mdp = '!N#Gh6}*hV0q\bIa';
+        $server = 'localhost';
+        $db = 'chat_papeete';
+        $login = 'root';
+        $mdp = '';
         try {
             $linkpdo = new PDO("mysql:host=$server;dbname=$db", $login, $mdp);
             $linkpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
