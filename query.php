@@ -10,7 +10,16 @@
             $list = $select->fetchAll();
             return $list;
         } catch(Exception $e) {
-            echo"erreur";
+            die('Erreur:'.$e->getMessage());
+        }
+    }
+
+    function createMessage($contenu, $auteur, $dateheure){
+        try {
+            $linkpdo = createDB();
+            $select = $linkpdo->prepare('INSERT INTO Message(contenu, auteur, date_heure values(?, ?, ?)');
+            $select->execute(array($contenu, $auteur, $dateheure));
+        } catch(Exception $e) {
             die('Erreur:'.$e->getMessage());
         }
     }
