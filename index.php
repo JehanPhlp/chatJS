@@ -24,10 +24,11 @@
             $listmessages = get10Messages();
 
             echo '<table>';
-            foreach($listmessages as $message){
+            foreach(array_reverse($listmessages) as $message){
                 echo '<tr>
                         <td>'.$message['auteur'].'</td>
                         <td>'.$message['contenu'].'</td>
+                        <td>Il y a '. (floor((strtotime(date('Y-m-d H:i:s')) - strtotime($message['date_heure'])) / 60)).' min</td>
                     </tr>';
             }
             echo '</table>';
