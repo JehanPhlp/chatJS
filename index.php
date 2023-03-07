@@ -21,7 +21,7 @@
 
             require('query.php');
 
-            $listmessages = getMessages();
+            $listmessages = get10Messages();
 
             echo '<table>';
             foreach($listmessages as $message){
