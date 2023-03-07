@@ -5,9 +5,10 @@
         <meta charset="utf-8">
         <title>Chat Papeete</title>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js">
+        <script src="script.js"></script>
+        <script>
             function getChampMessage() {
-                return document.getElementById("champsMessage").value;
+                return document.getElementById("champMessage").value;
             }
             function getAuteur() {
                 return document.getElementById("champPseudo").value;
