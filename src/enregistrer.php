@@ -1,6 +1,6 @@
 <?php
 
-    require("query.php");
+    require("../data/query.php");
 
     $auteur = $_GET['auteur'];
     $contenu = $_GET['contenu'];

@@ -19,7 +19,7 @@
         <input type="text" id="champPseudo">
         <?php
 
-            require('query.php');
+            require('../data/query.php');
 
             $listmessages = get10Messages();
 
