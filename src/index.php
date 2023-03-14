@@ -6,6 +6,7 @@
         <title>Chat Papeete</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
+        <script src="../dependencies/jquery.js"></script>
         <script>
             function getChampMessage() {
                 return document.getElementById("champMessage").value;
