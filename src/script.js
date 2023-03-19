@@ -6,11 +6,8 @@ import("../dependencies/jquery.js");
 function envoyerMessage(message, envoyeur) {
   $.ajax({
     type: "GET",
-    url: "enregistrer.php",
-    data: "auteur=" + envoyeur + "&contenu=" + message,
-    success: function (msg) {
-      alert("Blablabla : " + msg);
-    },
+    url: "src/enregistrer.php",
+    data: "auteur=" + envoyeur + "&contenu=" + message
   });
 }
 

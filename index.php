@@ -1,12 +1,11 @@
-
 <!doctype html>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
         <title>Chat Papeete</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-        <script src="../dependencies/jquery.js"></script>
+        <link rel="stylesheet" href="src/style.css">
+        <script src="src/script.js"></script>
+        <script src="dependencies/jquery.js"></script>
         <script>
             function getChampMessage() {
                 return document.getElementById("champMessage").value;
@@ -14,16 +13,15 @@
             function getAuteur() {
                 return document.getElementById("champPseudo").value;
             }
-            
         </script>
     </head>
     <body>
         <input type="text" id="champPseudo">
         <table id="listeMessages"></table>
         <script>
-            $('#listeMessages').load('recuperer.php');
+            $('#listeMessages').load('src/recuperer.php');
             setInterval(function() {
-                $('#listeMessages').load('recuperer.php');
+                $('#listeMessages').load('src/recuperer.php');
             }, 2000);
         </script>
         <form action="">

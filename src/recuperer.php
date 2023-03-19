@@ -6,7 +6,7 @@
         echo '<tr>
             <td>'.$message['auteur'].'</td>
             <td>'.$message['contenu'].'</td>
-            <td>Il y a '. afficherDate($message['date_heure']).'</td>
+            <td>'. afficherDate($message['date_heure']).'</td>
             </tr>';
     }
     echo '</table>';
@@ -15,18 +15,21 @@
         $time = floor((strtotime(date('Y-m-d H:i:s')) - strtotime($dateHeure)) / 60);
         if ($time > 1440) {
             if (floor($time/1440) == 1) {
-                return "1 jour";
+                return "Il y a 1 jour";
             } else {
-                return floor($time/1440)." jours";
+                return "Il y a ". floor($time/1440)." jours";
             }
         } else if ($time > 60) {
             if (floor($time/60) == 1) {
-                return "1 heure";
+                return "Il y a 1 heure";
             } else {
-                return floor($time / 60)." heures";
+                return "Il y a ". floor($time / 60) ." heures";
             }
         } else {
-            return $time . " min";
+            if ($time == 0) {
+                return "Maintenant";
+            }
+            return "Il y a ". $time . " min";
         }
     }
 ?>

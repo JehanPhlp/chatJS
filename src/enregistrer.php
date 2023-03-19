@@ -8,6 +8,4 @@
 
     createMessage($contenu, $auteur, $dateheure);
 
-    header('Location: afficher.php');
-
 ?>
