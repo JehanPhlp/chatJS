@@ -14,26 +14,20 @@
             function getAuteur() {
                 return document.getElementById("champPseudo").value;
             }
+            
         </script>
     </head>
     <body>
         <input type="text" id="champPseudo">
-        <?php
-
-            require('../data/query.php');
-
-            $listmessages = get10Messages();
-
-            echo '<table>';
-            foreach(array_reverse($listmessages) as $message){
-                echo '<tr>
-                        <td>'.$message['auteur'].'</td>
-                        <td>'.$message['contenu'].'</td>
-                        <td>Il y a '. (floor((strtotime(date('Y-m-d H:i:s')) - strtotime($message['date_heure'])) / 60)).' min</td>
-                    </tr>';
-            }
-            echo '</table>';
-        ?>
+        <script>
+            setInterval(function() {
+                $('#listMessages').load('recuperer.php');
+            }, 2000);
+        </script>
+        <table id="listeMessages"></table>
+        <script>
+            $('#listeMessages').load('recuperer.php');
+        </script>
         <form action="">
             <input type="text" id="champMessage">
             <input type="submit" value="Envoyer" onclick="envoyerMessage(getChampMessage(), getAuteur())">
