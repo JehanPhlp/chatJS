@@ -19,14 +19,12 @@
     </head>
     <body>
         <input type="text" id="champPseudo">
-        <script>
-            setInterval(function() {
-                $('#listMessages').load('recuperer.php');
-            }, 2000);
-        </script>
         <table id="listeMessages"></table>
         <script>
             $('#listeMessages').load('recuperer.php');
+            setInterval(function() {
+                $('#listeMessages').load('recuperer.php');
+            }, 2000);
         </script>
         <form action="">
             <input type="text" id="champMessage">

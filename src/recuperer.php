@@ -3,15 +3,13 @@
     $listmessages = get10Messages();
     echo '<table id="listeMessages">';
     foreach(array_reverse($listmessages) as $message){
-        echo '
-        <tr>
+        echo '<tr>
             <td>'.$message['auteur'].'</td>
             <td>'.$message['contenu'].'</td>
             <td>Il y a '. afficherDate($message['date_heure']).'</td>
             </tr>';
     }
-    echo '
-    </table>';
+    echo '</table>';
 
     function afficherDate($dateHeure){
         $time = floor((strtotime(date('Y-m-d H:i:s')) - strtotime($dateHeure)) / 60);
