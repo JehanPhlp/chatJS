@@ -1,16 +1,27 @@
 import("../dependencies/jquery.js");
 
+function getChampMessage() {
+  return document.getElementById("champMessage").value;
+}
+
+function getAuteur() {
+  return document.getElementById("champPseudo").value;
+}
+
 /*
  * Méthode qui sera appelée sur le click du bouton envoyer
  */
-function envoyerMessage(message, envoyeur) {
+function envoyerMessage(message, envoyeur, event) {
   if (checkFormsNonVides()) {
     $.ajax({
       type: "GET",
       url: "src/enregistrer.php",
       data: "auteur=" + envoyeur + "&contenu=" + message
     });
+    document.getElementById("champPseudo").value = '';
+    document.getElementById("champMessage").value = '';
   }
+  event.preventDefault();
 }
 
 function checkFormsNonVides() {

@@ -7,12 +7,11 @@
         <script src="src/script.js"></script>
         <script src="dependencies/jquery.js"></script>
         <script>
-            function getChampMessage() {
-                return document.getElementById("champMessage").value;
-            }
-            function getAuteur() {
-                return document.getElementById("champPseudo").value;
-            }
+            document.addEventListener('keydown', function(event) {
+                if(event.key == 'Enter') {
+                    envoyerMessage(getChampMessage(), getAuteur(), event);
+                }
+            });
         </script>
     </head>
     <body>
@@ -24,9 +23,9 @@
                 $('#listeMessages').load('src/recuperer.php');
             }, 1000);
         </script>
-        <form action="">
+        <form>
             <input type="text" id="champMessage" placeholder="Ecrivez votre message">
-            <input type="submit" value="Envoyer" onclick="envoyerMessage(getChampMessage(), getAuteur())">
+            <input type="button" value="Envoyer" onclick="envoyerMessage(getChampMessage(), getAuteur())">
         </form>
     </body>
 </html>

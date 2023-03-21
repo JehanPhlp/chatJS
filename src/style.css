@@ -38,7 +38,7 @@ form {
 }
 
 /* Styles pour le bouton d'envoi de message */
-input[type="submit"] {
+input[type="button"] {
   padding: 10px;
   font-size: 16px;
   background-color: #3498db;
