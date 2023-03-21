@@ -2,18 +2,6 @@
 
     require('bd.php');
 
-    function getMessages(){
-        try {
-            $linkpdo = createDB();
-            $select = $linkpdo->prepare('SELECT contenu, auteur, date_heure FROM Message ORDER BY 3 desc');
-            $select->execute();
-            $list = $select->fetchAll();
-            return $list;
-        } catch(Exception $e) {
-            die('Erreur:'.$e->getMessage());
-        }
-    }
-
     function createMessage($contenu, $auteur, $dateheure){
         try {
             $linkpdo = createDB();
@@ -31,6 +19,17 @@
             $select->execute();
             $list = $select->fetchAll();
             return $list;
+        } catch(Exception $e) {
+            die('Erreur:'.$e->getMessage());
+        }
+    }
+
+    function estMessageDoublon($message) {
+        try {
+            $linkpdo = createDB();
+            $select = $linkpdo->prepare('SELECT id_message FROM Message WHERE contenu = ?');
+            $select->execute(array($message));
+            return !empty($select->fetchAll());
         } catch(Exception $e) {
             die('Erreur:'.$e->getMessage());
         }

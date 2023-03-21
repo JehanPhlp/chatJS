@@ -6,6 +6,8 @@
     $contenu = $_GET['contenu'];
     $dateheure = date('Y-m-d H:i:s');
 
-    createMessage($contenu, $auteur, $dateheure);
+    if(!estMessageDoublon($contenu)) {
+        createMessage($contenu, $auteur, $dateheure);
+    }
 
 ?>

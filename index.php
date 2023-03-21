@@ -16,16 +16,16 @@
         </script>
     </head>
     <body>
-        <input type="text" id="champPseudo">
+        <input type="text" id="champPseudo" placeholder="Nom d'utilisateur">
         <table id="listeMessages"></table>
         <script>
             $('#listeMessages').load('src/recuperer.php');
             setInterval(function() {
                 $('#listeMessages').load('src/recuperer.php');
-            }, 2000);
+            }, 1000);
         </script>
         <form action="">
-            <input type="text" id="champMessage">
+            <input type="text" id="champMessage" placeholder="Ecrivez votre message">
             <input type="submit" value="Envoyer" onclick="envoyerMessage(getChampMessage(), getAuteur())">
         </form>
     </body>
