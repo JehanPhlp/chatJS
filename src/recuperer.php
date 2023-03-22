@@ -4,8 +4,8 @@
     echo '<table id="listeMessages">';
     foreach(array_reverse($listmessages) as $message){
         echo '<tr>
-            <td>'.$message['auteur'].'</td>
-            <td>'.$message['contenu'].'</td>
+            <td>'.htmlentities($message['auteur']).'</td>
+            <td>'.htmlentities($message['contenu']).'</td>
             <td>'. afficherDate($message['date_heure']).'</td>
             </tr>';
     }

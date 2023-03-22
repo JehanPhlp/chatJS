@@ -15,7 +15,6 @@
         </script>
     </head>
     <body>
-        <input type="text" id="champPseudo" placeholder="Nom d'utilisateur">
         <table id="listeMessages"></table>
         <script>
             $('#listeMessages').load('src/recuperer.php');
@@ -23,6 +22,7 @@
                 $('#listeMessages').load('src/recuperer.php');
             }, 1000);
         </script>
+        <input type="text" id="champPseudo" placeholder="Nom d'utilisateur">
         <form>
             <input type="text" id="champMessage" placeholder="Ecrivez votre message">
             <input type="button" value="Envoyer" onclick="envoyerMessage(getChampMessage(), getAuteur())">
